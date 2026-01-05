@@ -23,17 +23,15 @@ const std::string&	ShrubberyCreationForm::getTarget(void) const
 
 void	ShrubberyCreationForm::action(void) const
 {
-	if (_target == "")
-		throw emptyStringException();
-	else
-		plantShrubbery();
+	plantShrubbery();
 }
 
 void	ShrubberyCreationForm::plantShrubbery(void) const
 {
 	std::string	fileName = _target + "_shrubbery";
 	std::ofstream os(fileName.c_str());
-	if (os.bad() == true)
+
+	if (os.good() != true)
 		throw badOStreamException();
 	else
 	{
@@ -75,9 +73,4 @@ void	ShrubberyCreationForm::plantShrubbery(void) const
 const char* ShrubberyCreationForm::badOStreamException::what(void) const throw()
 {
 	return ("The stream isn't working as intended!\n");
-}
-
-const char* ShrubberyCreationForm::emptyStringException::what(void) const throw()
-{
-	return ("The target name is missing!\n");
 }
