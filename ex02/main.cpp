@@ -11,8 +11,11 @@ int	main(void)
 	try
 	{
 		Bureaucrat JeanFrancois("JeanFrancois", 140);
-		AForm *form = new ShrubberyCreationForm("targeto");
-		AForm *realForm = new ShrubberyCreationForm(*(static_cast<ShrubberyCreationForm*>(form)));
+		AForm *form = NULL;
+		AForm *realForm= NULL;
+
+		form = new ShrubberyCreationForm("targeto");
+		realForm = new ShrubberyCreationForm(*(static_cast<ShrubberyCreationForm*>(form)));
 		try
 		{
 			JeanFrancois.signForm(*realForm);
@@ -61,8 +64,11 @@ int	main(void)
 	try
 	{
 		Bureaucrat JeanFrancois("JeanFrancois", 1);
-		AForm *form = new PresidentialPardonForm("targeto");
-		AForm *realForm = new PresidentialPardonForm(*(static_cast<PresidentialPardonForm*>(form)));
+		AForm *form = NULL;
+		AForm *realForm= NULL;
+
+		form = new PresidentialPardonForm("targeto");
+		realForm = new PresidentialPardonForm(*(static_cast<PresidentialPardonForm*>(form)));
 		try
 		{
 			JeanFrancois.signForm(*realForm);
@@ -91,8 +97,11 @@ int	main(void)
 	try
 	{
 		Bureaucrat JeanFrancois("JeanFrancois", 1);
-		AForm *form = new RobotomyRequestForm("JeanFrancois");
-		AForm *realForm = new RobotomyRequestForm(*(static_cast<RobotomyRequestForm*>(form)));
+		AForm *form = NULL;
+		AForm *realForm = NULL;
+
+		form = new RobotomyRequestForm("JeanFrancois");
+		realForm = new RobotomyRequestForm(*(static_cast<RobotomyRequestForm*>(form)));
 		try
 		{
 			JeanFrancois.signForm(*realForm);
