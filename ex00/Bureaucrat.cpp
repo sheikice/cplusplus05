@@ -60,10 +60,12 @@ void Bureaucrat::demote(void)
 		throw GradeTooLowException();
 	setGrade(newGrade);
 }
+
 const char* Bureaucrat::GradeTooHighException::what(void) const throw()
 {
 	return ("Grade too high!");
 }
+
 const char* Bureaucrat::GradeTooLowException::what(void) const throw()
 {
 	return ("Grade too low!");
