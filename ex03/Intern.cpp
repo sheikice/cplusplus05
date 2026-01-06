@@ -3,7 +3,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
-#include <iostream>
 
 Intern::Intern(void) {}
 
@@ -23,7 +22,7 @@ Intern& Intern::operator=(const Intern& other)
 AForm*	Intern::makeForm(const std::string& formName, const std::string& target) const
 {
 	static const int	LIST_SIZE = 3;
-	AForm*				form;
+	AForm*				form = NULL;
 	int					index = 0;
 	std::string			formList[LIST_SIZE] = {"shrubbery creation", "presidential pardon", "robotomy request"};
 
@@ -41,10 +40,7 @@ AForm*	Intern::makeForm(const std::string& formName, const std::string& target) 
 			form = new RobotomyRequestForm(target);
 			break ;
 		default:
-		{
 			throw badFormNameException();
-			return (NULL);
-		}
 	}
 	if (form == NULL)
 		throw badAllocationException();
