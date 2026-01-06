@@ -18,8 +18,15 @@ class PresidentialPardonForm: public AForm
 
 		const std::string&	getTarget(void) const;
 
-		void	action(void) const;
-		void	presidentialAbsolution(void) const;
+		void			action(void) const;
+		void			presidentialAbsolution(void) const;
+		static AForm*	createForm(const std::string&);
+
+		class badAllocationException: public std::exception
+		{
+			public:
+				virtual const char* what(void) const throw();
+		};
 };
 
 #endif

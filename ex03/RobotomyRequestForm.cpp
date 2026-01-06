@@ -37,5 +37,19 @@ void	RobotomyRequestForm::robotomy() const
 		std::cout << _target << " has been robotomised.\n";
 	else
 		std::cout << "Robotomy has failed.\n";
+}
 
+AForm*	RobotomyRequestForm::createForm(const std::string& target)
+{
+	AForm* form;
+
+	form = new RobotomyRequestForm(target);
+	if (!form)
+		throw badAllocationException();
+	return (form);
+}
+
+const char* RobotomyRequestForm::badAllocationException::what(void) const throw()
+{
+	return ("Memory allocation failed!");
 }

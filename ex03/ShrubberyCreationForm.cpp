@@ -1,5 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
+#include <iostream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(void): AForm("shrubberyCreationForm", 145, 137), _target("") {}
 
@@ -70,7 +71,22 @@ void	ShrubberyCreationForm::plantShrubbery(void) const
 	}
 }
 
+AForm*	ShrubberyCreationForm::createForm(const std::string& target)
+{
+	AForm* form = NULL;
+
+	form = new ShrubberyCreationForm(target);
+	if (form == NULL)
+		throw badAllocationException();
+	return (form);
+}
+
 const char* ShrubberyCreationForm::badOStreamException::what(void) const throw()
 {
 	return ("The stream isn't working as intended!\n");
+}
+
+const char* ShrubberyCreationForm::badAllocationException::what(void) const throw()
+{
+	return ("Memory allocation failed!");
 }

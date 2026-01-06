@@ -13,19 +13,19 @@ class Intern
 		Intern(const Intern&);
 		Intern& operator=(const Intern&);
 
-		AForm *makeForm(const std::string&, const std::string&) const;
+		AForm *makeForm(const std::string&, const std::string&);
 
-	class badAllocationException: public std::exception
-	{
-		public:
-			virtual const char* what(void) const throw();
-	};
+		class badAllocationException: public std::exception
+		{
+			public:
+				virtual const char* what(void) const throw();
+		};
 
-	class badFormNameException: public std::exception
-	{
-		public:
-			virtual const char* what(void) const throw();
-	};
+		class badFormNameException: public std::exception
+		{
+			public:
+				virtual const char* what(void) const throw();
+		};
 };
 
 #endif

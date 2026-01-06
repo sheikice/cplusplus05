@@ -265,5 +265,25 @@ int	main(void)
 		delete intern;
 	}
 	std::cout << "\n";
+
+	std::cout << "\n";
+	{
+		std::cout << "[TEST: SUCCESS construction]\n";
+		Intern* intern = NULL;
+		AForm* form = NULL;
+		try
+		{
+			intern = new Intern();
+			form = intern->makeForm("shrubbery creation", "target");
+			std::cout << *form << "\n";
+		}
+		catch (std::exception& e)
+		{
+			std::cout << "It doesn't work because: " << e.what() << "\n";
+		}
+		delete form;
+		delete intern;
+	}
+	std::cout << "\n";
 	return (0);
 }

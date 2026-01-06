@@ -20,8 +20,15 @@ class ShrubberyCreationForm: public AForm
 
 		void	action(void) const;
 		void	plantShrubbery(void) const;
+		static AForm*	createForm(const std::string&);
 
 		class badOStreamException: public std::exception
+		{
+			public:
+				virtual const char* what(void) const throw();
+		};
+
+		class badAllocationException: public std::exception
 		{
 			public:
 				virtual const char* what(void) const throw();

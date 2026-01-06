@@ -30,3 +30,20 @@ void	PresidentialPardonForm::presidentialAbsolution() const
 {
 	std::cout << _target << " has been pardoned by Zaphod Beeblebrox.\n";
 }
+
+AForm*	PresidentialPardonForm::createForm(const std::string& target)
+{
+	AForm* form;
+
+	form = new PresidentialPardonForm(target);
+	if (!form)
+		throw badAllocationException();
+	return (form);
+}
+
+
+const char* PresidentialPardonForm::badAllocationException::what(void) const throw()
+{
+	return ("Memory allocation failed!");
+}
+

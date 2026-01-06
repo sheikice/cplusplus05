@@ -19,25 +19,28 @@ Intern& Intern::operator=(const Intern& other)
 	return (*this);
 }
 
-AForm*	Intern::makeForm(const std::string& formName, const std::string& target) const
+AForm*	Intern::makeForm(const std::string& formName, const std::string& target)
 {
+	enum OPTIONS {SHRUBBERY_CREATION, PRESIDENTIAL_PARDON, ROBOTOMY_REQUEST};
+	int index = 0;
+	typedef AForm* (*ptrFn) (const std::string&);
 	static const int	LIST_SIZE = 3;
 	AForm*				form = NULL;
-	int					index = 0;
 	std::string			formList[LIST_SIZE] = {"shrubbery creation", "presidential pardon", "robotomy request"};
-
+	ptrFn fnList[LIST_SIZE] = {&ShrubberyCreationForm::createForm,
+		&PresidentialPardonForm::createForm, &RobotomyRequestForm::createForm};
 	while (index < LIST_SIZE && formList[index] != formName)
 		index++;
 	switch (index)
 	{
-		case 0:
-			form = new ShrubberyCreationForm(target);
+		case SHRUBBERY_CREATION:
+			form = (*fnList[index])(target);
 			break ;
-		case 1:
-			form = new PresidentialPardonForm(target);
+		case PRESIDENTIAL_PARDON:
+			form = (*fnList[index])(target);
 			break ;
-		case 2:
-			form = new RobotomyRequestForm(target);
+		case ROBOTOMY_REQUEST:
+			form = (*fnList[index])(target);
 			break ;
 		default:
 			throw badFormNameException();

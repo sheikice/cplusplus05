@@ -30,7 +30,7 @@ class AForm
 
 		void				beSigned(const Bureaucrat&);
 		void				execute(const Bureaucrat&) const;
-		virtual void		action(void) const = 0;
+		virtual	void		action(void) const = 0;
 
 		class GradeTooLowException: public std::exception
 		{
