@@ -26,8 +26,7 @@ void	RobotomyRequestForm::action(void) const
 {
 	if (_target == "")
 		throw emptyStringException();
-	else
-		robotomy();
+	robotomy();
 }
 
 void	RobotomyRequestForm::robotomy() const

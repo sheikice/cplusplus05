@@ -25,8 +25,7 @@ void	PresidentialPardonForm::action(void) const
 {
 	if (_target == "")
 		throw emptyStringException();
-	else
-		presidentialAbsolution();
+	presidentialAbsolution();
 }
 
 void	PresidentialPardonForm::presidentialAbsolution() const

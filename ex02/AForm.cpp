@@ -46,16 +46,6 @@ bool	AForm::getIsSigned(void) const
 	return (_isSigned);
 }
 
-void AForm::setGradeToSign(int gradeToSign)
-{
-	_gradeToSign = gradeToSign;
-}
-
-void AForm::setGradeToExecute(int gradeToExecute)
-{
-	_gradeToExecute = gradeToExecute;
-}
-
 void AForm::setIsSigned(bool isSigned)
 {
 	_isSigned = isSigned;
@@ -63,23 +53,18 @@ void AForm::setIsSigned(bool isSigned)
 
 void 	AForm::beSigned(const Bureaucrat& bureaucrat)
 {
-	if (bureaucrat.getGrade() <= getGradeToSign())
-		setIsSigned(true);
-	else
+	if (bureaucrat.getGrade() > getGradeToSign())
 		throw GradeTooLowException();
+	setIsSigned(true);
 }
 
 void	AForm::execute(const Bureaucrat& executor) const
 {
 	if (getIsSigned() == false)
 		throw FormNotSignedException();
-	else
-	{
-		if (getGradeToExecute() < executor.getGrade())
-			throw GradeTooLowException();
-		else
-			action();
-	}
+	if (getGradeToExecute() < executor.getGrade())
+		throw GradeTooLowException();
+	action();
 }
 
 const char* AForm::GradeTooLowException::what(void) const throw()
