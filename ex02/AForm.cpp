@@ -103,7 +103,7 @@ std::ostream& operator<<(std::ostream& os, const AForm& form)
 		os << form.getName() << " is not signed.\n";
 	else
 		os << form.getName() << " is signed.\n";
-	os << " Grade required to sign is " << form.getGradeToSign() << "\n";
-	os << " Grade required to execute is " << form.getGradeToExecute() << "\n";
+	os << "- Grade required to sign is " << form.getGradeToSign() << "\n";
+	os << "- Grade required to execute is " << form.getGradeToExecute() << "\n";
 	return (os);
 }

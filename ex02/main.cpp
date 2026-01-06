@@ -7,48 +7,7 @@
 
 int	main(void)
 {
-	std::cout << "\n[Fail signing test]:\n";
-	try
-	{
-		Bureaucrat JeanFrancois("JeanFrancois", 150);
-		AForm *form = new ShrubberyCreationForm("targeto");
-		AForm *realForm = new ShrubberyCreationForm(*(static_cast<ShrubberyCreationForm*>(form)));
-		try
-		{
-			JeanFrancois.signForm(*realForm);
-		}
-		catch (std::exception& e)
-		{
-			std::cout << "Error: " << e.what() << "\n";
-		}
-		try
-		{
-			std::cout << JeanFrancois.getName() << " is trying to promote from grade " << JeanFrancois.getGrade() << "\n";
-			while (1)
-				JeanFrancois.promote();
-		}
-		catch (std::exception& e)
-		{
-			std::cout << "Error: " << e.what() << "\n";
-		}
-		try
-		{
-			std::cout << JeanFrancois << "\n";
-			JeanFrancois.signForm(*realForm);
-		}
-		catch (std::exception& e)
-		{
-			std::cout << "Error: " << e.what() << "\n";
-		}
-		delete form;
-		delete realForm;
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "Error: " << e.what() << "\n";
-	}
-
-	std::cout << "\n[Fail execute test]:\n";
+	std::cout << "\n[TEST: execution FAILED ShrubberyCreationForm]\n";
 	try
 	{
 		Bureaucrat JeanFrancois("JeanFrancois", 140);
@@ -70,6 +29,7 @@ int	main(void)
 		{
 			std::cout << "Error: " << e.what() << "\n";
 		}
+		std::cout << "\n[TEST: execution SUCCESS ShrubberyCreationForm]\n";
 		try
 		{
 			std::cout << JeanFrancois.getName() << " is trying to promote from grade " << JeanFrancois.getGrade() << "\n";
@@ -97,7 +57,7 @@ int	main(void)
 		std::cout << "Error: " << e.what() << "\n";
 	}
 
-	std::cout << "\n[Success execute test PresidentialPardonForm]:\n";
+	std::cout << "\n[TEST: execution SUCCESS PresidentialPardonForm]\n";
 	try
 	{
 		Bureaucrat JeanFrancois("JeanFrancois", 1);
@@ -127,7 +87,7 @@ int	main(void)
 		std::cout << "Error: " << e.what() << "\n";
 	}
 
-	std::cout << "\n[Success execute test RobotomyRequestForm]:\n";
+	std::cout << "\n[TEST: execution SUCCESS RobotomyRequestForm]\n";
 	try
 	{
 		Bureaucrat JeanFrancois("JeanFrancois", 1);
