@@ -33,7 +33,8 @@ void	ShrubberyCreationForm::plantShrubbery(void) const
 {
 	std::string	fileName = _target + "_shrubbery";
 	std::ofstream os(fileName.c_str());
-	if (os.bad() == true)
+
+	if (os.good() != true)
 		throw badOStreamException();
 	else
 	{
