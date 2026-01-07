@@ -6,7 +6,7 @@
 #    By: jwuille <jwuille@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/17 14:16:44 by jwuille           #+#    #+#              #
-#    Updated: 2026/01/06 15:34:44 by jwuille          ###   ########.fr        #
+#    Updated: 2026/01/07 14:37:06 by jwuille          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC =	\
 		ShrubberyCreationForm.cpp \
 		main.cpp
 
-CC = c++ -MD -std=c++98 -O2
+CC = c++ -MD -std=c++98
 CFLAGS = -Wall -Werror -Wextra -g3
 NAME = a.out
 

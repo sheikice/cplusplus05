@@ -239,7 +239,7 @@ int	main(void)
 		}
 		catch (std::exception& e)
 		{
-			std::cout << "It doesn't work because: " << e.what() << "\n";
+			std::cout << "Error: " << e.what() << "\n";
 		}
 		delete form;
 		delete intern;
@@ -259,7 +259,7 @@ int	main(void)
 		}
 		catch (std::exception& e)
 		{
-			std::cout << "It doesn't work because: " << e.what() << "\n";
+			std::cout << "Error: " << e.what() << "\n";
 		}
 		delete form;
 		delete intern;
@@ -279,7 +279,7 @@ int	main(void)
 		}
 		catch (std::exception& e)
 		{
-			std::cout << "It doesn't work because: " << e.what() << "\n";
+			std::cout << "Error: " << e.what() << "\n";
 		}
 		delete form;
 		delete intern;
