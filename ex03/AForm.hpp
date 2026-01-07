@@ -9,8 +9,8 @@ class AForm
 	private:
 		const std::string	_name;
 		bool				_isSigned;
-		int					_gradeToSign;
-		int					_gradeToExecute;
+		const int					_gradeToSign;
+		const int					_gradeToExecute;
 		
 	public:
 		AForm(void);
