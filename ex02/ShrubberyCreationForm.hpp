@@ -26,12 +26,6 @@ class ShrubberyCreationForm: public AForm
 			public:
 				virtual const char* what(void) const throw();
 		};
-
-		class emptyStringException: public std::exception
-		{
-			public:
-				virtual const char* what(void) const throw();
-		};
 };
 
 #endif

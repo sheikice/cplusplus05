@@ -24,8 +24,6 @@ const std::string&	RobotomyRequestForm::getTarget(void) const
 
 void	RobotomyRequestForm::action(void) const
 {
-	if (_target == "")
-		throw emptyStringException();
 	robotomy();
 }
 
@@ -40,9 +38,4 @@ void	RobotomyRequestForm::robotomy() const
 	else
 		std::cout << "Robotomy has failed.\n";
 
-}
-
-const char* RobotomyRequestForm::emptyStringException::what(void) const throw()
-{
-	return ("The target name is missing!\n");
 }

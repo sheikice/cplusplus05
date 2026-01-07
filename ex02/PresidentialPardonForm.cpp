@@ -23,17 +23,10 @@ const std::string&	PresidentialPardonForm::getTarget(void) const
 
 void	PresidentialPardonForm::action(void) const
 {
-	if (_target == "")
-		throw emptyStringException();
 	presidentialAbsolution();
 }
 
 void	PresidentialPardonForm::presidentialAbsolution() const
 {
 	std::cout << _target << " has been pardoned by Zaphod Beeblebrox.\n";
-}
-
-const char* PresidentialPardonForm::emptyStringException::what(void) const throw()
-{
-	return ("The target name is missing!\n");
 }

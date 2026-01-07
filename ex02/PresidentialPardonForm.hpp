@@ -20,12 +20,6 @@ class PresidentialPardonForm: public AForm
 
 		void	action(void) const;
 		void	presidentialAbsolution(void) const;
-
-		class emptyStringException: public std::exception
-		{
-			public:
-				virtual const char* what(void) const throw();
-		};
 };
 
 #endif

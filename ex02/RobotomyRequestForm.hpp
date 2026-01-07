@@ -20,12 +20,6 @@ class RobotomyRequestForm: public AForm
 
 		void	action(void) const;
 		void	robotomy(void) const;
-
-		class emptyStringException: public std::exception
-		{
-			public:
-				virtual const char* what(void) const throw();
-		};
 };
 
 #endif
