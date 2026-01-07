@@ -46,16 +46,6 @@ bool	AForm::getIsSigned(void) const
 	return (_isSigned);
 }
 
-void AForm::setGradeToSign(int gradeToSign)
-{
-	_gradeToSign = gradeToSign;
-}
-
-void AForm::setGradeToExecute(int gradeToExecute)
-{
-	_gradeToExecute = gradeToExecute;
-}
-
 void AForm::setIsSigned(bool isSigned)
 {
 	_isSigned = isSigned;

@@ -24,8 +24,6 @@ class AForm
 		int					getGradeToExecute(void) const;
 		bool				getIsSigned(void) const;
 
-		void				setGradeToSign(int);
-		void 				setGradeToExecute(int);
 		void				setIsSigned(bool);
 
 		void				beSigned(const Bureaucrat&);
